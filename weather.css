@@ -1,0 +1,175 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  position: relative;
+  /* background: #fdfacf; */
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(222, 168, 248) 0%,
+    rgb(168, 222, 248) 21.8%,
+    rgb(189, 250, 205) 35.6%,
+    rgb(243, 250, 189) 52.9%,
+    rgb(250, 227, 189) 66.8%,
+    rgb(248, 172, 172) 90%
+  );
+  border-color: #f4e711;
+  border-style: solid;
+  border-width: 2px;
+  width: 700px;
+  border-radius: 4px;
+}
+
+.input {
+  background: #fffdec;
+  border: none;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 40%;
+  font-size: 28px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px #ccc9d3;
+  outline: none;
+}
+
+.input[type="text"] {
+  font-size: 24px;
+  padding-left: 15px;
+  color: #404148;
+  font-weight: 600;
+}
+
+.button {
+  margin: 0;
+  color: #5e6576;
+  font-weight: bolder;
+  transition: all 300ms ease-in-out;
+  box-shadow: 5px 5px 5px #ccc9d3;
+  border-radius: 5px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  background: rgb(247, 234, 234);
+  color: white;
+}
+
+.search {
+  background: #fde9ad;
+  font-size: 24px;
+  padding: 5px 20px;
+  width: 170px;
+  border-color: #ffa726;
+  border-style: solid;
+}
+
+.current {
+  font-size: 24px;
+  padding: 5px 20px;
+  background: #e7efb6;
+  border-color: #8ec351;
+  border-style: solid;
+  width: 170px;
+}
+
+.cities {
+  color: #006ec5;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: bold;
+  margin: 20px 60px;
+}
+
+.col {
+  display: inline-block;
+  margin: 0 20px;
+  transform: all 200ms ease-in-out;
+}
+
+.col:hover {
+  cursor: pointer;
+  color: #4fa6e8;
+}
+
+.col2 {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.currentcity {
+  color: #016fc6;
+  font-size: 34px;
+  font-weight: bold;
+  font-style: italic;
+  margin-left: 90px;
+}
+
+.dayofweekanftime {
+  color: #016fc6;
+  font-size: 34px;
+  font-style: italic;
+  margin-left: 90px;
+  line-height: 1;
+}
+
+.currenttemperature,
+.weathericon {
+  color: #596aca;
+  font-size: 70px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.metric {
+  position: absolute;
+  left: 220px;
+  bottom: 125px;
+}
+
+.fahrenheit,
+.celsius {
+  color: #596aca;
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 20px;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.fahrenheit:hover,
+.celsius:hover {
+  color: #4fa6e8;
+}
+
+.humidity {
+  color: #348bc7;
+  position: absolute;
+  left: 500px;
+  bottom: 200px;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.wind {
+  color: #348bc7;
+  position: absolute;
+  left: 500px;
+  bottom: 150px;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.weekforecast {
+  color: #5a6275;
+  font-size: 24px;
+  margin: 15px 50px;
+}
+
+.sun {
+  margin-left: 40px;
+}

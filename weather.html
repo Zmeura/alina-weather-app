@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container main">
+      <div class="container cities">
+        <span class="kiev col" id="kiev">Kyiv</span>
+        <span class="odessa col">Odesa</span>
+        <span class="lviv col">Lviv</span>
+        <span class="kharkiv col">Kharkiv</span>
+        <span class="dnepr col">Dnipro</span>
+      </div>
+
+      <form id="searching-form">
+        <input
+          type="text"
+          placeholder="enter a city"
+          class="input"
+          id="input"
+        />
+
+        <input type="submit" class="search button" value="SEARCH" />
+        <input
+          type="button"
+          class="current button"
+          id="currentbutton"
+          value="CURRENT"
+        />
+      </form>
+
+      <br />
+      <span class="currentcity" id="currentcity"></span>
+      <br />
+      <span class="dayofweekanftime" id="dayofweekanftime">Saturday 13:05</span>
+      <br />
+
+      <span class="weathericon"><i>⛅</i></span>
+      <span>
+        <i class="currenttemperature" id="currenttemperature">9</i>
+        <span class="metric"
+          ><i class="celsius">°C/</i> <i class="fahrenheit">°F</i></span
+        ></span
+      >
+
+      <span class="humidity"
+        >Humidity: <span id="humidityvalue">51</span> %</span
+      >
+      <br />
+      <span class="wind">Wind: <span id="windvalue">5</span> km/h</span>
+
+      <div class="container weekforecast">
+        <span class="col2 sun">
+          Sun <br />
+          ☀ <br />
+          29°
+        </span>
+        <span class="col2">Mon <br />🌦<br />25°</span>
+        <span class="col2">Tue <br />⛈<br />26°</span>
+        <span class="col2">
+          Wed <br />🌤<br />
+          28°
+        </span>
+        <span class="col2">Thue <br />☀<br />31°</span>
+      </div>
+    </div>
+    <script src="weather5new.js"></script>
+  </body>
+</html>
