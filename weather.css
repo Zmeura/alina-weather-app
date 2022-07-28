@@ -173,3 +173,16 @@ body {
 .sun {
   margin-left: 40px;
 }
+
+.buildby {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.sourcelink {
+  text-decoration: none;
+}
+
+.sourcelink:hover {
+  text-decoration: underline;
+}
