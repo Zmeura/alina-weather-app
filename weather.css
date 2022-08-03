@@ -19,6 +19,7 @@ body {
   border-width: 2px;
   width: 700px;
   border-radius: 6px;
+  height: 430px;
 }
 
 .input {
@@ -125,7 +126,6 @@ body {
   color: #596aca;
   font-size: 70px;
   font-weight: bold;
-  margin-left: 5px;
   position: absolute;
   bottom: 130px;
 }
@@ -166,8 +166,11 @@ body {
 
 .weekforecast {
   color: #5a6275;
+  position: absolute;
+  left: 60px;
+  bottom: 10px;
   font-size: 24px;
-  margin: 15px 50px;
+  /* margin: 15px 50px; */
 }
 
 .sun {

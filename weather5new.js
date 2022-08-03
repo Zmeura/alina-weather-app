@@ -91,7 +91,7 @@ function showWeather(response) {
   let iconElement = document.querySelector("#weathericon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+    `https://openweathermap.org/img/wn/${iconCode}@2x.png`
   );
   console.log(response.data);
 }
