@@ -83,10 +83,17 @@ function showWeather(response) {
   let windElement = response.data.wind.speed;
   windValue.innerHTML = windElement;
 
-  console.log(response.data);
-
   let weatherDiscription = document.querySelector("#weatherdiscription");
   weatherDiscription.innerHTML = response.data.weather[0].description;
+
+  let iconCode = response.data.weather[0].icon;
+
+  let iconElement = document.querySelector("#weathericon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+  );
+  console.log(response.data);
 }
 
 let humidityValue = document.querySelector("#humidityvalue");

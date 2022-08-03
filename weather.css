@@ -117,24 +117,29 @@ body {
   line-height: 1;
 }
 
-.currenttemperature,
 .weathericon {
+  margin-left: 45px;
+}
+
+.currenttemperature {
   color: #596aca;
   font-size: 70px;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 5px;
+  position: absolute;
+  bottom: 130px;
 }
 
 .metric {
   position: absolute;
-  left: 220px;
-  bottom: 125px;
+  left: 230px;
+  bottom: 165px;
 }
 
 .fahrenheit,
 .celsius {
   color: #596aca;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   margin-left: 20px;
   text-decoration: none;
