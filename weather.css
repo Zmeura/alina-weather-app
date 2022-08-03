@@ -122,12 +122,19 @@ body {
   margin-left: 45px;
 }
 
+.slash {
+  color: #4558c3;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .currenttemperature {
-  color: #596aca;
+  color: #4558c3;
   font-size: 70px;
   font-weight: bold;
   position: absolute;
   bottom: 130px;
+  left: 140px;
 }
 
 .metric {
@@ -136,15 +143,26 @@ body {
   bottom: 165px;
 }
 
-.fahrenheit,
-.celsius {
-  color: #596aca;
+.active {
+  color: #4558c3;
+}
+
+.noactive {
+  color: #71aedc;
+}
+
+.noactive:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.fahrenheitelement,
+.celsiuselement {
   font-size: 30px;
   font-weight: bold;
   margin-left: 20px;
   text-decoration: none;
   margin: 0;
-  cursor: pointer;
 }
 
 .fahrenheit:hover,

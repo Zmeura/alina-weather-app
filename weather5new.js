@@ -38,22 +38,6 @@ function searchCity(city) {
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
-let currenttemperature = document.querySelector("#currenttemperature");
-let celsius = currenttemperature.innerHTML;
-let fahrenheit = Math.round((celsius * 9) / 5 + 32);
-
-function tofahrenheit() {
-  currenttemperature.innerHTML = fahrenheit;
-}
-let fahrenheitTemperature = document.querySelector(".fahrenheit");
-fahrenheitTemperature.addEventListener("click", tofahrenheit);
-
-function tocelsius() {
-  currenttemperature.innerHTML = celsius;
-}
-let celsiusTemperature = document.querySelector(".celsius");
-celsiusTemperature.addEventListener("click", tocelsius);
-
 let currentButton = document.querySelector("#currentbutton");
 currentButton.addEventListener("click", showCurrenLocation);
 
@@ -73,9 +57,9 @@ function showWeather(response) {
   let enterCity = response.data.name;
   currentcity.innerHTML = enterCity;
 
-  let temperatureCelsius = Math.round(response.data.main.temp);
+  celsius = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#currenttemperature");
-  temperatureElement.innerHTML = temperatureCelsius;
+  temperatureElement.innerHTML = celsius;
 
   let humidityElement = response.data.main.humidity;
   humidityValue.innerHTML = humidityElement;
@@ -119,5 +103,29 @@ let dnepr = document.querySelector(".dnepr");
 dnepr.addEventListener("click", function () {
   searchCity("dnepr");
 });
+
+let currenttemperature = document.querySelector("#currenttemperature");
+let celsius = null;
+
+function tofahrenheit() {
+  let fahrenheit = Math.round((celsius * 9) / 5 + 32);
+  currenttemperature.innerHTML = fahrenheit;
+  celsiusTemperature.classList.remove("active");
+  fahrenheitTemperature.classList.remove("noactive");
+  celsiusTemperature.classList.add("noactive");
+  fahrenheitTemperature.classList.add("active");
+}
+let fahrenheitTemperature = document.querySelector(".fahrenheitelement");
+fahrenheitTemperature.addEventListener("click", tofahrenheit);
+
+function tocelsius() {
+  currenttemperature.innerHTML = celsius;
+  fahrenheitTemperature.classList.remove("active");
+  celsiusTemperature.classList.add("active");
+  fahrenheitTemperature.classList.add("noactive");
+  celsiusTemperature.classList.remove("noactive");
+}
+let celsiusTemperature = document.querySelector(".celsiuselement");
+celsiusTemperature.addEventListener("click", tocelsius);
 
 showCurrenLocation();
