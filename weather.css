@@ -17,7 +17,7 @@ body {
   border-style: solid;
   border-width: 2px;
   width: 700px;
-  border-radius: 6px;
+  border-radius: 15px;
   height: 430px;
 }
 
@@ -50,12 +50,11 @@ input:focus:-ms-input-placeholder {
 }
 
 .button {
-  margin: 0;
   color: #5e6576;
   font-weight: bolder;
   transition: all 300ms ease-in-out;
   box-shadow: 2px 2px 2px #ccc9d3;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .button:hover {
@@ -110,23 +109,25 @@ input:focus:-ms-input-placeholder {
 
 .currentcity {
   color: #016fc6;
-  font-size: 34px;
+  font-size: 48px;
   font-weight: bold;
   font-style: italic;
-  padding-left: 90px;
-  line-height: 50px;
+  padding-left: 60px;
+  line-height: 30px;
 }
 
 .dayofweekanftime {
   color: #016fc6;
   font-size: 34px;
   font-style: italic;
-  padding-left: 90px;
-  line-height: 1;
+  padding-left: 95px;
+  line-height: 70px;
 }
 
 .weathericon {
-  padding-left: 45px;
+  left: 45px;
+  position: absolute;
+  bottom: 113px;
 }
 
 .slash {
@@ -140,14 +141,14 @@ input:focus:-ms-input-placeholder {
   font-size: 70px;
   font-weight: bold;
   position: absolute;
-  bottom: 130px;
+  bottom: 125px;
   left: 140px;
 }
 
 .metric {
   position: absolute;
   left: 230px;
-  bottom: 165px;
+  bottom: 160px;
 }
 
 .active {
@@ -169,7 +170,6 @@ input:focus:-ms-input-placeholder {
   font-weight: bold;
   padding-left: 5px;
   text-decoration: none;
-  margin: 0;
 }
 
 .fahrenheit:hover,
@@ -201,8 +201,8 @@ input:focus:-ms-input-placeholder {
 }
 
 .buildby {
-  margin-top: 15px;
-  margin-left: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
 }
 
 .sourcelink {
