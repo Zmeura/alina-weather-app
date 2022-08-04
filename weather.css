@@ -4,7 +4,6 @@ body {
 
 .main {
   position: relative;
-  /* background: #fdfacf; */
   background: radial-gradient(
     circle at 10% 20%,
     rgb(222, 168, 248) 0%,
@@ -25,20 +24,29 @@ body {
 .input {
   background: #fffdec;
   border: none;
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: 27px;
   width: 40%;
   font-size: 28px;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #ccc9d3;
   outline: none;
+  color: #5e6576;
+  font-size: 24px;
+  padding-left: 10px;
+  font-weight: 600;
 }
 
-.input[type="text"] {
-  font-size: 24px;
-  padding-left: 15px;
-  color: #404148;
-  font-weight: 600;
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
 }
 
 .button {
@@ -81,13 +89,12 @@ body {
   color: #006ec5;
   font-size: 24px;
   font-weight: 700;
-  font-style: bold;
-  margin: 20px 60px;
+  padding: 20px 60px;
 }
 
 .col {
   display: inline-block;
-  margin: 0 20px;
+  padding: 0 20px;
   transform: all 200ms ease-in-out;
 }
 
@@ -98,7 +105,7 @@ body {
 
 .col2 {
   display: inline-block;
-  margin: 0 30px;
+  padding: 0 30px;
 }
 
 .currentcity {
@@ -106,7 +113,7 @@ body {
   font-size: 34px;
   font-weight: bold;
   font-style: italic;
-  margin-left: 90px;
+  padding-left: 90px;
   line-height: 50px;
 }
 
@@ -114,12 +121,12 @@ body {
   color: #016fc6;
   font-size: 34px;
   font-style: italic;
-  margin-left: 90px;
+  padding-left: 90px;
   line-height: 1;
 }
 
 .weathericon {
-  margin-left: 45px;
+  padding-left: 45px;
 }
 
 .slash {
@@ -160,7 +167,7 @@ body {
 .celsiuselement {
   font-size: 30px;
   font-weight: bold;
-  margin-left: 20px;
+  padding-left: 5px;
   text-decoration: none;
   margin: 0;
 }
@@ -174,25 +181,23 @@ body {
   color: #348bc7;
   position: absolute;
   left: 420px;
-  bottom: 120px;
+  bottom: 127px;
   font-style: italic;
   font-size: 20px;
   line-height: 45px;
   list-style-type: none;
+}
+
+.weatherdiscription {
   text-transform: capitalize;
 }
 
 .weekforecast {
   color: #5a6275;
   position: absolute;
-  left: 60px;
-  bottom: 10px;
+  left: 70px;
+  bottom: 20px;
   font-size: 24px;
-  /* margin: 15px 50px; */
-}
-
-.sun {
-  margin-left: 40px;
 }
 
 .buildby {

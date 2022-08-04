@@ -21,9 +21,10 @@
       <form id="searching-form">
         <input
           type="text"
-          placeholder="enter a city"
+          placeholder="Enter a city..."
           class="input"
           id="input"
+          autocomplete="off"
         />
 
         <input type="submit" class="search button" value="SEARCH" />
@@ -43,9 +44,7 @@
 
      <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather icon" id="weathericon" class="weathericon">
      
-
-
-      <span class="alltemperature" >
+      <span>
         <i class="currenttemperature" id="currenttemperature"></i>
         <span class="metric"
           ><i class="celsiuselement active">°C </i><span class="slash">/</span><i class="fahrenheitelement noactive">°F</i></span
@@ -54,14 +53,14 @@
 
 
      <ul class="discription" >
-      <li id="weatherdiscription"></li>
+      <li class="weatherdiscription" id="weatherdiscription"></li>
       <li class="humidity">Humidity: <span id="humidityvalue"></span> %</span
         ></li>
       <li class="wind">Wind: <span id="windvalue"></span> km/h</span></li>
      </ul>
 
       <div class="container weekforecast">
-        <span class="col2 sun">
+        <span class="col2">
           Sun <br />
           ☀ <br />
           29°
