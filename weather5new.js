@@ -1,24 +1,28 @@
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+function updateTime() {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let today = document.querySelector("#dayofweekanftime");
+  today.innerHTML = `${day} ${hour}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let today = document.querySelector("#dayofweekanftime");
-today.innerHTML = `${day} ${hour}:${minutes}`;
+
+setInterval(updateTime, 500);
 
 let apiKey = "95d7d2d06b9ed1ae1ccca7fcd6a50893";
 let units = "metric";
@@ -124,4 +128,5 @@ function tocelsius() {
 let celsiusTemperature = document.querySelector(".celsiuselement");
 celsiusTemperature.addEventListener("click", tocelsius);
 
-showCurrenLocation();
+// showCurrenLocation();
+searchCity("Odesa");
