@@ -102,11 +102,6 @@ input:focus:-ms-input-placeholder {
   color: #4fa6e8;
 }
 
-.col2 {
-  display: inline-block;
-  padding: 0 30px;
-}
-
 .currentcity {
   color: #016fc6;
   font-size: 48px;
@@ -195,9 +190,14 @@ input:focus:-ms-input-placeholder {
 .weekforecast {
   color: #5a6275;
   position: absolute;
-  left: 70px;
+  left: 48px;
   bottom: 20px;
   font-size: 24px;
+}
+
+.col2 {
+  display: inline-block;
+  padding: 0 25px;
 }
 
 .buildby {

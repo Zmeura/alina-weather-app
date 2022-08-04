@@ -73,11 +73,7 @@ function showWeather(response) {
   let iconCode = response.data.weather[0].icon;
 
   let iconElement = document.querySelector("#weathericon");
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${iconCode}@2x.png`
-  );
-  console.log(response.data);
+  iconElement.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="weather icon" id="weathericon" class="weathericon">`;
 }
 
 let humidityValue = document.querySelector("#humidityvalue");
