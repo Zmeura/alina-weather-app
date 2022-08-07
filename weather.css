@@ -4,21 +4,23 @@ body {
 
 .main {
   position: relative;
+
   background: radial-gradient(
     circle at 10% 20%,
     rgb(222, 168, 248) 0%,
     rgb(168, 222, 248) 21.8%,
-    rgb(189, 250, 205) 35.6%,
-    rgb(243, 250, 189) 52.9%,
-    rgb(250, 227, 189) 66.8%,
+    rgb(162, 240, 183) 37.6%,
+    rgb(237, 247, 158) 60.9%,
+    rgb(250, 227, 189) 71.8%,
     rgb(248, 172, 172) 90%
   );
+
   border-color: #f4e711;
   border-style: solid;
   border-width: 2px;
   width: 700px;
   border-radius: 15px;
-  height: 430px;
+  height: 480px;
 }
 
 .input {
@@ -108,7 +110,7 @@ input:focus:-ms-input-placeholder {
   font-weight: bold;
   font-style: italic;
   padding-left: 60px;
-  line-height: 30px;
+  line-height: 40px;
 }
 
 .dayofweekanftime {
@@ -116,13 +118,13 @@ input:focus:-ms-input-placeholder {
   font-size: 34px;
   font-style: italic;
   padding-left: 95px;
-  line-height: 70px;
+  line-height: 80px;
 }
 
 .weathericon {
   left: 45px;
   position: absolute;
-  bottom: 113px;
+  bottom: 153px;
 }
 
 .slash {
@@ -136,14 +138,14 @@ input:focus:-ms-input-placeholder {
   font-size: 70px;
   font-weight: bold;
   position: absolute;
-  bottom: 125px;
+  bottom: 165px;
   left: 140px;
 }
 
 .metric {
   position: absolute;
   left: 230px;
-  bottom: 160px;
+  bottom: 200px;
 }
 
 .active {
@@ -176,7 +178,7 @@ input:focus:-ms-input-placeholder {
   color: #348bc7;
   position: absolute;
   left: 420px;
-  bottom: 127px;
+  bottom: 170px;
   font-style: italic;
   font-size: 20px;
   line-height: 45px;
@@ -188,21 +190,32 @@ input:focus:-ms-input-placeholder {
 }
 
 .weekforecast {
-  color: #5a6275;
+  color: #4a5264;
   position: absolute;
-  left: 48px;
+  left: 32px;
   bottom: 20px;
-  font-size: 24px;
+  font-size: 23px;
 }
 
 .col2 {
   display: inline-block;
-  padding: 0 25px;
+  padding: 0 15px;
+}
+
+.current_day_weather_min_max {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-forecast-temperature-min {
+  color: #81889c;
 }
 
 .buildby {
-  padding-top: 15px;
-  padding-left: 15px;
+  position: absolute;
+  bottom: -35px;
+  left: 15px;
 }
 
 .sourcelink {

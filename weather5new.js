@@ -22,11 +22,92 @@ function updateTime() {
   today.innerHTML = `${day} ${hour}:${minutes}`;
 }
 
-setInterval(updateTime, 500);
+setInterval(updateTime, 1000);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 
 let apiKey = "95d7d2d06b9ed1ae1ccca7fcd6a50893";
 let units = "metric";
 let currentcity = document.querySelector("#currentcity");
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  let weekForecast = document.querySelector("#weekforecast");
+
+  let forecastHTML = `<div class="weekforecast" id="weekforecast">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col2">
+        <div class="current_day_weather_min_max">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <img
+          src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="60"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
+        </div>
+        </div>
+      </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  weekForecast.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+function getForcast(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function showWeather(response) {
+  let enterCity = response.data.name;
+  currentcity.innerHTML = enterCity;
+
+  celsius = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#currenttemperature");
+  temperatureElement.innerHTML = celsius;
+
+  let humidityElement = response.data.main.humidity;
+  humidityValue.innerHTML = humidityElement;
+
+  let windElement = response.data.wind.speed;
+  windValue.innerHTML = windElement;
+
+  let weatherDiscription = document.querySelector("#weatherdiscription");
+  weatherDiscription.innerHTML = response.data.weather[0].description;
+
+  let iconCode = response.data.weather[0].icon;
+
+  let iconElement = document.querySelector("#weathericon");
+  iconElement.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="weather icon" id="weathericon" class="weathericon">`;
+
+  getForcast(response.data.coord);
+}
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -55,29 +136,6 @@ function searchPosition(position) {
   let units = "metric";
   let apiUrlPosition = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrlPosition).then(showWeather);
-}
-
-function showWeather(response) {
-  let enterCity = response.data.name;
-  currentcity.innerHTML = enterCity;
-
-  celsius = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#currenttemperature");
-  temperatureElement.innerHTML = celsius;
-
-  let humidityElement = response.data.main.humidity;
-  humidityValue.innerHTML = humidityElement;
-
-  let windElement = response.data.wind.speed;
-  windValue.innerHTML = windElement;
-
-  let weatherDiscription = document.querySelector("#weatherdiscription");
-  weatherDiscription.innerHTML = response.data.weather[0].description;
-
-  let iconCode = response.data.weather[0].icon;
-
-  let iconElement = document.querySelector("#weathericon");
-  iconElement.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="weather icon" id="weathericon" class="weathericon">`;
 }
 
 let humidityValue = document.querySelector("#humidityvalue");
@@ -117,7 +175,6 @@ function tofahrenheit() {
 }
 let fahrenheitTemperature = document.querySelector(".fahrenheitelement");
 fahrenheitTemperature.addEventListener("click", tofahrenheit);
-
 function tocelsius() {
   currenttemperature.innerHTML = celsius;
   fahrenheitTemperature.classList.remove("active");
