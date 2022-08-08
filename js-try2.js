@@ -40,38 +40,76 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let weekForecast = document.querySelector("#weekforecast");
 
-  let forecastHTML = `<div class="weekforecast" id="weekforecast">`;
+  function displayForecastMetric() {
+    let forecastHTML = `<div class="weekforecast" id="weekforecast">`;
 
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `<div class="col2">
-        <div class="current_day_weather_min_max">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img
-          src="https://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="60"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
-          )}° </span>
-        </div>
-        </div>
-      </div>`;
-    }
-  });
-  forecastHTML = forecastHTML + `</div>`;
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 6) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="col2">
+          <div class="current_day_weather_min_max">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+          <img
+            src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt=""
+            width="60"
+          />
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° </span>
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}° </span>
+          </div>
+          </div>
+        </div>`;
+      }
+    });
+    forecastHTML = forecastHTML + `</div>`;
 
-  weekForecast.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+    weekForecast.innerHTML = forecastHTML;
+  }
+  displayForecastMetric();
+
+  function displayForecastImperial() {
+    let forecastHTML = `<div class="weekforecast" id="weekforecast">`;
+
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 6) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="col2">
+          <div class="current_day_weather_min_max">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+          <img
+            src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt=""
+            width="60"
+          />
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              (forecastDay.temp.max * 9) / 5 + 32
+            )}° </span>
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              (forecastDay.temp.min * 9) / 5 + 32
+            )}° </span>
+          </div>
+          </div>
+        </div>`;
+      }
+    });
+    forecastHTML = forecastHTML + `</div>`;
+
+    weekForecast.innerHTML = forecastHTML;
+  }
+  fahrenheitTemperature.addEventListener("click", displayForecastImperial);
+  celsiusTemperature.addEventListener("click", displayForecastMetric);
 }
 
 function getForcastMetric(coordinates) {
